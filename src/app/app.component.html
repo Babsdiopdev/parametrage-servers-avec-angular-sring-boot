@@ -7,28 +7,29 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h2>Manager Servers
+                        <h2>Parametrage des Serveurs
                             <i class="fas fa-hand-point-right"></i></h2>
                     </div>
                     <div class="col-sm-6">
-                        <button type="button" class="btn btn-primary">
-                          Print Report</button>
-                        <a href="#" class="btn btn-success" data-toggle="modal">
-                            <i class="material-icons">&#xE147;</i>
-                            <span>New Server</span>
-                        </a>
-                        <span>
-                          <select  ngModel ="ALL"  name="status"
-                          class="btn btn-info" aria-label="status" style="height:32.91px">
-                          <option value="ALL"></option>
-                          <option value="SERVER_UP">SERVER UP</option>
-                          <option value="SERVER_DOWN">SERVER DOWN</option>
-                          </select>
 
-                        </span>
+
+                        <a href="#" class="btn btn-primary mt-1" data-toggle="modal">
+                            <i class="fa fa-plus"></i>
+                            <span>Nouveau Server</span>
+                        </a>
+
                     </div>
                 </div>
             </div>
+            <a type="button" class="btn btn-primary">
+                <i class="material-icons">&#xE147;</i> affichage Report</a>
+            <a type="button" class="m-2 btn btn-primary">
+                <select ngModel="ALL" name="status" aria-label="status" style="height:32.91px">
+                  <option value="ALL">ALL</option>
+                  <option value="SERVER_UP">SERVER UP</option>
+                  <option value="SERVER_DOWN">SERVER DOWN</option>
+                  </select>
+            </a>
             <br>
             <ng-container *ngIf="(appState$ |async) as appState" [ngSwitch]="appState.dataState">
                 <ng-container *ngSwitchCase="DataState.LOADING_STATE">
@@ -42,8 +43,8 @@
                             <tr>
                                 <th>Image</th>
                                 <th>IP Address</th>
-                                <th>Name</th>
-                                <th>Memory</th>
+                                <th>Nom</th>
+                                <th>Memoire</th>
                                 <th>Status</th>
                                 <th>Ping</th>
                                 <th>Action</th>
